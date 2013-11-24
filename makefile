@@ -5,7 +5,7 @@
 
 CC := g++
 CFLAGS := -c -Wall
-DBCFLAGS= -DDEBUG -g
+DBCFLAGS := -DDEBUG -g
 LDFLAGS=
 
 PROJDIRS := .

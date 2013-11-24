@@ -5,6 +5,7 @@
  * Written by:   Scott Kinney
  * Date:         
  */
+//TODO add move and flip functionality
 #include <iostream>
 #include "ScottKinneyLab6Point.h"
 #include "ScottKinneyLab6Fraction.h"
