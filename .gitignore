@@ -1,0 +1,30 @@
+#lab 6 .gitignore
+#ignore objects and archives anywhere in the tree
+*.[oa]
+#ignore temp or backup directories
+**/temp
+**/backup
+#ignore the executable
+lab6
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
