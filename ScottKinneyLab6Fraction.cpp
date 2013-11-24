@@ -6,7 +6,6 @@
  * Date:         
  */
 //TODO more testing
-//FIXME change print fraction '\' to '/'
 #include <iostream>
 #include "ScottKinneyLab6Fraction.h"
 #include "ScottKinneyLab6FractionUtility.h"
@@ -61,7 +60,7 @@ bool FractionScottK::operator>(const FractionScottK& arg) const {
 }
 
 ostream& operator<<(ostream& os, const FractionScottK& fra) {
-    os << fra.num << "\\" << fra.denom;
+    os << fra.num << "/" << fra.denom;
     return os;
 }
 
