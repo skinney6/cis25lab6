@@ -5,6 +5,7 @@
  * Written by:   Scott Kinney
  * Date:         
  */
+//TODO add debugging 
 #include <iostream>
 #include "ScottKinneyLab6Circle.h"
 #include "ScottKinneyLab6Point.h"
