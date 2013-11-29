@@ -11,6 +11,7 @@
 #include "ScottKinneyLab6Rectangle.h"
 #include "ScottKinneyLab6Point.h"
 #include "ScottKinneyLab6Fraction.h"
+#include "ScottKinneyLab6Utility.h"
 using namespace std;
 
 FractionScottK compareCircleArea(CircleScottK& c1, CircleScottK& c2){
@@ -23,16 +24,14 @@ void circleInit(CircleScottK*& c1, CircleScottK*& c2) {
     int n;
     int d;
 
-    cout << "Circle One\nCenter: ";
+    cout << "Circle one center point:\n";
     createCirclePoint(center);
-    cout << "Enter Radius:\n";
-    cin >> n >> d;
-    radius.update(n, d);
+    cout << "Radius: ";
+    radius = createFraction();
 
     while (radius < 0) {
-	cout << "Radius cannot be less than zero\nEnter Radius:\n";
-	cin >> n >> d;
-	radius.update(n, d);
+	cout << "Radius cannot be less than zero\nRadius: ";
+	radius = createFraction();
     }
 	
     if (c1)
@@ -42,16 +41,14 @@ void circleInit(CircleScottK*& c1, CircleScottK*& c2) {
 
     delete center;
     
-    cout << "Circle Two\n";
+    cout << "Circle two center point:\n";
     createCirclePoint(center);
-    cout << "Enter Radius:\n";
-    cin >> n >> d;
-    radius.update(n, d);
+    cout << "Radius: ";
+    radius = createFraction();
 
     while (radius < 0) {
-	cout << "Radius cannot be less than zero\nEnter Radius:\n";
-	cin >> n >> d;
-	radius.update(n, d);
+	cout << "Radius cannot be less than zero.\nRadius: ";
+	radius = createFraction();
     }
 
     if (c2)
@@ -63,20 +60,14 @@ void circleInit(CircleScottK*& c1, CircleScottK*& c2) {
 }
 
 void createCirclePoint(PointScottK*& center) {
-    int nX;
-    int dX;
-    int nY;
-    int dY;
 
     // x coordinate
-    cout << "X coordinate:\n";
-    cin >> nX >> dX;
-    FractionScottK frX(nX, dX);
+    cout << "x: ";
+    FractionScottK frX = createFraction();
 
     // y coordinate
-    cout << "Y coordinate:\n";
-    cin >> nY >> dY;
-    FractionScottK frY(nY, dY);
+    cout << "y: ";
+    FractionScottK frY = createFraction();
 
     // create point lower left
     center = new PointScottK(frX, frY);

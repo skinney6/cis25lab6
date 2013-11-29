@@ -7,11 +7,13 @@
  */
 #ifndef SCOTTKINNEYLAB6UTILITY_H
 #define SCOTTKINNEYLAB6UTILITY_H
+#include "ScottKinneyLab6Fraction.h"
 
 void mainMenuScottKinney(void);
 void rectangleMenuScottKinney(void);
 void circleMenuScottKinney(void);
 void headerScottKinney(void);
 void errorInitScottKinney(void);
-
+FractionScottK createFraction(void);
 #endif
+

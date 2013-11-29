@@ -6,6 +6,8 @@
  * Date:         
  */
 #include <iostream>
+#include <string>
+#include <sstream>
 #include "ScottKinneyLab6Rectangle.h"
 #include "ScottKinneyLab6Circle.h"
 #include "ScottKinneyLab6Fraction.h"
@@ -166,6 +168,34 @@ void circleMenuScottKinney(void) {
 	    cout << "\nWrong option ...\n";
 	}
     } while (option != 5);
+}
+
+//create a fraction from string input
+
+FractionScottK createFraction() {
+    string input;
+    string::size_type pos = 0;
+    string::size_type len = 0;
+    int n;
+    int d;
+
+    cin >> input;
+    len = input.length();
+    pos = input.find("/");
+
+    if (pos != string::npos) {
+	string nStr = input.substr(0, pos);
+	if (!(stringstream(nStr) >> n))
+	    n = 0;
+	string dStr = input.substr((pos + 1), (len - pos));
+	if (!(stringstream(dStr) >> d))
+	    d = 1;
+    } else {
+	if (!(stringstream(input) >> n))
+	    n = 0;
+	d = 1;
+    }
+    return FractionScottK(n, d);
 }
 
 void headerScottKinney(void) {

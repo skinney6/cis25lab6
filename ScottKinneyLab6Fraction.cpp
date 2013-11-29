@@ -5,7 +5,6 @@
  * Written by:   Scott Kinney
  * Date:         
  */
-//TODO more testing
 #include <iostream>
 #include "ScottKinneyLab6Fraction.h"
 #include "ScottKinneyLab6FractionUtility.h"
