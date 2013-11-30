@@ -21,15 +21,13 @@ FractionScottK compareCircleArea(CircleScottK& c1, CircleScottK& c2){
 void circleInit(CircleScottK*& c1, CircleScottK*& c2) {
     PointScottK *center = NULL;
     FractionScottK *radius = NULL;
-    int n;
-    int d;
 
     cout << "Circle one center point:\n";
     createCirclePoint(center);
     cout << "Radius: ";
     createFraction(radius);
 
-    while (radius < 0) {
+    while (*radius < 0) {
 	cout << "Radius cannot be less than zero\nRadius: ";
 	createFraction(radius);
     }
@@ -47,7 +45,7 @@ void circleInit(CircleScottK*& c1, CircleScottK*& c2) {
     cout << "Radius: ";
     createFraction(radius);
 
-    while (radius < 0) {
+    while (*radius < 0) {
 	cout << "Radius cannot be less than zero.\nRadius: ";
 	createFraction(radius);
     }

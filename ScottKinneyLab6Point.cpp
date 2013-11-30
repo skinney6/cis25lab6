@@ -5,7 +5,6 @@
  * Written by:   Scott Kinney
  * Date:         
  */
-//TODO add flip functionality
 #include <iostream>
 #include "ScottKinneyLab6Point.h"
 #include "ScottKinneyLab6Fraction.h"
@@ -23,7 +22,6 @@ void PointScottK::flipThroughOrigin(void) {
     x = -x;
     y = -y;
 }
-
 
 void PointScottK::moveBy(const FractionScottK &delX, 
 			 const FractionScottK &delY) {

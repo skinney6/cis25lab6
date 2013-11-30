@@ -4,8 +4,8 @@
 # search gihub for "pdclib" for an example
 # c++ debug -D_GLIBCXX_DEBUG
 CC := g++
-CPARMS = -g -Wall -Wextra
-LDFLAGS = -g
+CPARMS := -g -Wall -Wextra
+LDFLAGS := -g
 
 PROJDIRS := .
 SRCFILES := $(shell find $(PROJDIRS) -maxdepth 1 -type f -name "*.cpp")
@@ -25,8 +25,11 @@ all: lab6
 lab6: $(OBJFILES)
 	$(CC) $(LDFLAGS) $(OBJFILES) -o $@
 
-%.o: %.c makefile
-	$(CC) $(CFLAGS) $(CPARMS) -MMD -MP $< -o $@
+%.o: %.cpp makefile
+	$(CC) -c $(CFLAGS) $(CPARMS) -MMD -MP $< -o $@
+
+#$(OBJFILES): %.o: %.cpp
+#	$(CC) $(CFLAGS) $(CPARMS) -MMD -MP $< -o $@
 
 todolist:
 	-@for file in $(ALLFILES:makefile=); do grep -H -e TODO -e FIXME $$file; done; true

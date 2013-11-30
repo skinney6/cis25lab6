@@ -1,9 +1,7 @@
 #lab 6 .gitignore
 #ignore objects and archives anywhere in the tree
 *.[oa]
-#ignore temp or backup directories
-**/temp
-**/backup
+
 #ignore the executable
 lab6
 
@@ -11,6 +9,7 @@ lab6
 *.slo
 *.lo
 *.o
+*.d
 *.obj
 
 # Compiled Dynamic libraries
