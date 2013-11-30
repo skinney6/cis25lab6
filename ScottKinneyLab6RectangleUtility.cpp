@@ -52,38 +52,46 @@ void createTwoPoints(PointScottK *&ptLl, PointScottK *&ptUr) {
 
     // lower left x coordinate
     cout << "Lower left\n\tx: ";
-    
-    FractionScottK frXll = createFraction();
+    FractionScottK *frXll = NULL;
+    createFraction(frXll);
 
     // lower left y coordinate
     cout << "Lower left\n\ty: ";
-    FractionScottK frYll = createFraction();
+    FractionScottK *frYll = NULL;
+    createFraction(frYll);
 
     // create point lower left
-    ptLl = new PointScottK(frXll, frYll);
+    ptLl = new PointScottK(*frXll, *frYll);
 
     // upper right x coordinate
     // check that it's greater that lower left x
-    cout << "upper rigth\n\tx: ";
-    FractionScottK frXur = createFraction();
+    cout << "upper right\n\tx: ";
+    FractionScottK *frXur = NULL;
+    createFraction(frXur);
 
-    while (frXur < frXll) {
+    while (*frXur < *frXll) {
 	cout << "Cannot be less than lower left x coordinate.\n" 
 	     << "\tx: ";
-	frXur = createFraction();
+	createFraction(frXur);
     }
 
     // upper rigth y cooridnate
     // check that it's greater that lower left y
-    cout << "upper rigth\n\ty: ";
-    FractionScottK frYur = createFraction();;
+    cout << "upper right\n\ty: ";
+    FractionScottK *frYur = NULL;
+    createFraction(frYur);
     
-    while (frYur < frYll) {
+    while (*frYur < *frYll) {
 	cout << "Cannot be less than lower left Y coordinate.\n" 
 	     << "\ty: ";
-	frYur = createFraction();
+	createFraction(frYur);
     }
 
-    ptUr = new PointScottK(frXur, frYur);
+    ptUr = new PointScottK(*frXur, *frYur);
+
+    delete frXll;
+    delete frYll;
+    delete frXur;
+    delete frYur;
 }
 

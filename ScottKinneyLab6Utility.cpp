@@ -24,7 +24,8 @@ int option;
 	     << "\n*     MAIN MENU        *"
 	     << "\n* 1. Rectangle Tasks   *"
 	     << "\n* 2. Circle Tasks      *"
-	     << "\n* 3. Quit              *"
+	     << "\n* 3.point test        *"
+	     << "\n* 4. Quit              *"
 	     << "\n************************" << endl;
 	cout << "Select an option (use iteger value only): ";
 	cin >> option;
@@ -37,12 +38,16 @@ int option;
 	    circleMenuScottKinney();
 	    break;
 	case 3:
+	    testPoint();
 	    break;
+	case 4:
+	    break;
+
 	default:
 	    cout << "\nWrong Option. Use 1, 2 or 3\n";
 	    cout << endl;
 	}
-    } while (option != 3);
+    } while (option != 4);
 }
 
 void rectangleMenuScottKinney(void) {
@@ -119,7 +124,7 @@ void circleMenuScottKinney(void) {
 	     << "\n* 1. Create two Circle Objects *"
 	     << "\n* 2. Compate by Volume         *"
 	     << "\n* 3. Compate by Area           *"
-	     << "\n* 4. Print tow Circle Objects  *"
+	     << "\n* 4. Print two Circle Objects  *"
 	     << "\n* 5. Quit                      *"
 	     << "\n********************************" << endl;
 	cout << "Select an option (1 through 5): ";
@@ -172,7 +177,7 @@ void circleMenuScottKinney(void) {
 
 //create a fraction from string input
 
-FractionScottK createFraction() {
+void createFraction(FractionScottK *&frPt) {
     string input;
     string::size_type pos = 0;
     string::size_type len = 0;
@@ -195,7 +200,7 @@ FractionScottK createFraction() {
 	    n = 0;
 	d = 1;
     }
-    return FractionScottK(n, d);
+    frPt = new FractionScottK(n, d);
 }
 
 void headerScottKinney(void) {
@@ -212,4 +217,27 @@ void headerScottKinney(void) {
 void errorInitScottKinney(void) {
     cout << "\nError: Fractions not initialized" << endl;
     cout << "  Run option 1.\n" << endl;
+}
+
+void testPoint(void) {
+    FractionScottK fr1(2, 3);
+    FractionScottK fr2(-4, 5);
+    FractionScottK fr3(1, 1);
+    FractionScottK fr4(2, 2);
+
+    PointScottK p1(fr1, fr2);
+    PointScottK p2(fr1, fr2);
+
+    cout << "p2 "<< p2 << "\n";
+
+    p2.flipByX();
+    cout << p2 << "\n";
+
+    p2.flipByY();
+    cout << p2 << "\n";
+
+
+    p2.flipThroughOrigin();
+    cout << p2 << "\n";
+
 }

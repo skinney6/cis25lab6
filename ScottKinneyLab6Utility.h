@@ -14,6 +14,6 @@ void rectangleMenuScottKinney(void);
 void circleMenuScottKinney(void);
 void headerScottKinney(void);
 void errorInitScottKinney(void);
-FractionScottK createFraction(void);
+void createFraction(FractionScottK *&);
+void testPoint(void);
 #endif
-

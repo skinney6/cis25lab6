@@ -10,6 +10,11 @@
 #include "ScottKinneyLab6FractionUtility.h"
 using namespace std;
 
+FractionScottK& FractionScottK::operator-() {
+    num = -num;
+    return *this;
+}
+
 FractionScottK& FractionScottK::operator+=(const FractionScottK& arg) {
     *this = *this + arg;
     return *this;
@@ -70,16 +75,45 @@ istream& operator>>(istream& is, FractionScottK& fra) {
 
 FractionScottK::FractionScottK() {
     // default constructor
+    cout << "Fraction() called\n";
     num = 0;
     denom = 1;
 }
 
 FractionScottK::FractionScottK(int n, int d) {
-    this->update(n, d);
+    cout << "Fraction(int, int) called\n";
+    int negitiveFlag = 0;
+    // make sure wed dont give denom neg value or zero
+    if (d == 0) {
+	num = n;
+	denom = 1;
+    } 
+    if (d < 0) {
+	denom = -d;
+	num = -n;
+    } 
+    else {
+	num = n;
+	denom = d;
+    }
+    // check & change sign before we reduce
+    if (num < 0) {
+	negitiveFlag = 1;
+	num = -num;
+    }
+    int gcf = gcd(num, denom);
+    //reduce
+    if (negitiveFlag == 1) {
+	num = -(num / gcf);
+	denom = (denom / gcf);
+    } else { 
+	num = (num / gcf);
+	denom = (denom / gcf);
+    }
 }
 
 void FractionScottK::update(int n, int d) {
-    // constructor
+    cout << "Fraction update(int int) called\n";
     int negitiveFlag = 0;
     // make sure wed dont give denom neg value or zero
     if (d == 0) {
@@ -112,17 +146,20 @@ void FractionScottK::update(int n, int d) {
 
 FractionScottK::FractionScottK(const FractionScottK& frOld) {
     // copy constructor    
+    cout << "Fraction(const Fraction&) called\n";
     num = frOld.num;
     denom = frOld.denom;
 }
 
 FractionScottK::FractionScottK(int n) {
     // convert constructor
+    cout << "Fraction(int) called\n";
     num = n;
     denom = 1; 
 }
 
 FractionScottK::~FractionScottK() {
+    cout << "~Fraction() Destructor called\n";
     // destructor
 }
 

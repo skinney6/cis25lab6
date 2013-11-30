@@ -14,6 +14,4 @@ void createTwoPoints(PointScottK *&, PointScottK *&);
 
 FractionScottK compareArea(RectangleScottK&, RectangleScottK&);
 
-//FractionScottK createFraction(void);
-
 #endif

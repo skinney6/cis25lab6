@@ -19,56 +19,63 @@ FractionScottK compareCircleArea(CircleScottK& c1, CircleScottK& c2){
 }
 
 void circleInit(CircleScottK*& c1, CircleScottK*& c2) {
-    PointScottK *center;
-    FractionScottK radius;
+    PointScottK *center = NULL;
+    FractionScottK *radius = NULL;
     int n;
     int d;
 
     cout << "Circle one center point:\n";
     createCirclePoint(center);
     cout << "Radius: ";
-    radius = createFraction();
+    createFraction(radius);
 
     while (radius < 0) {
 	cout << "Radius cannot be less than zero\nRadius: ";
-	radius = createFraction();
+	createFraction(radius);
     }
 	
     if (c1)
-	c1->update(*center, radius);
+	c1->update(*center, *radius);
     else
-	c1 = new CircleScottK(*center, radius);	    
+	c1 = new CircleScottK(*center, *radius);	    
 
     delete center;
-    
+    delete radius;
+
     cout << "Circle two center point:\n";
     createCirclePoint(center);
     cout << "Radius: ";
-    radius = createFraction();
+    createFraction(radius);
 
     while (radius < 0) {
 	cout << "Radius cannot be less than zero.\nRadius: ";
-	radius = createFraction();
+	createFraction(radius);
     }
 
     if (c2)
-	c2->update(*center, radius);
+	c2->update(*center, *radius);
     else
-	c2 = new CircleScottK(*center, radius);
+	c2 = new CircleScottK(*center, *radius);
 
     delete center;
+    delete radius;
 }
 
-void createCirclePoint(PointScottK*& center) {
+void createCirclePoint(PointScottK *&center) {
 
     // x coordinate
     cout << "x: ";
-    FractionScottK frX = createFraction();
+    FractionScottK *frX = NULL;
+    createFraction(frX);
 
     // y coordinate
     cout << "y: ";
-    FractionScottK frY = createFraction();
+    FractionScottK *frY = NULL;
+    createFraction(frY);
 
     // create point lower left
-    center = new PointScottK(frX, frY);
+    center = new PointScottK(*frX, *frY);
+
+    delete frX;
+    delete frY;
 }

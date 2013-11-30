@@ -34,6 +34,7 @@ public:
     FractionScottK& operator=(const FractionScottK&);
     FractionScottK& operator+=(const FractionScottK&);
     FractionScottK& operator-=(const FractionScottK&);
+    FractionScottK& operator-(void);
     bool operator==(const FractionScottK&) const;
     bool operator!=(const FractionScottK&) const;
     bool operator<=(const FractionScottK&) const;
