@@ -3,7 +3,7 @@
  * Program name: ScottKinneyLab6Fraction.cpp
  * Discussion :  Lab 6 Exercise 1
  * Written by:   Scott Kinney
- * Date:         
+ * Date:         Tue Dec  3 09:05:01 PST 2013
  */
 #include <iostream>
 #include "ScottKinneyLab6Fraction.h"
@@ -15,73 +15,71 @@ FractionScottK& FractionScottK::operator-() {
     return *this;
 }
 
-FractionScottK& FractionScottK::operator+=(const FractionScottK& arg) {
+FractionScottK& FractionScottK::operator+=(const FractionScottK &arg) {
     *this = *this + arg;
     return *this;
 }
 
-FractionScottK& FractionScottK::operator-=(const FractionScottK& arg) {
+FractionScottK& FractionScottK::operator-=(const FractionScottK &arg) {
     *this = *this - arg;
     return *this;
 }
 
-bool FractionScottK::operator==(const FractionScottK& arg) const {
+bool FractionScottK::operator==(const FractionScottK &arg) const {
     if (num == arg.num && denom == arg.denom)
 	return true;
     else 
 	return false;
 }
-bool FractionScottK::operator!=(const FractionScottK& arg) const {
+bool FractionScottK::operator!=(const FractionScottK &arg) const {
     return !(*this == arg);
 }
 
-bool FractionScottK::operator<(const FractionScottK& arg) const {
+bool FractionScottK::operator<(const FractionScottK &arg) const {
     if ((*this != arg) && (((num * arg.denom) - (denom * arg.num)) < 0))
 	return true;
     else 
 	return false;
 }
 
-bool FractionScottK::operator<=(const FractionScottK& arg) const {
+bool FractionScottK::operator<=(const FractionScottK &arg) const {
     if (*this < arg || *this == arg)
 	return true;
     else 
 	return false;
 }
 
-bool FractionScottK::operator>=(const FractionScottK& arg) const {
+bool FractionScottK::operator>=(const FractionScottK &arg) const {
     if (*this == arg || *this > arg)
 	return true;
     else 
 	return false;
 }
 
-bool FractionScottK::operator>(const FractionScottK& arg) const {
+bool FractionScottK::operator>(const FractionScottK &arg) const {
     if (*this != arg)
 	return !(*this < arg);
     else 
 	return false;
 }
 
-ostream& operator<<(ostream& os, const FractionScottK& fra) {
+ostream& operator<<(ostream &os, const FractionScottK &fra) {
     os << fra.num << "/" << fra.denom;
     return os;
 }
 
-istream& operator>>(istream& is, FractionScottK& fra) {
+istream& operator>>(istream &is, FractionScottK &fra) {
     is >> fra.num >> fra.denom;
     return is;
 }
 
 FractionScottK::FractionScottK() {
     // default constructor
-    cout << "Fraction() called\n";
     num = 0;
     denom = 1;
 }
 
 FractionScottK::FractionScottK(int n, int d) {
-    cout << "Fraction(int, int) called\n";
     int negitiveFlag = 0;
     // make sure wed dont give denom neg value or zero
     if (d == 0) {
@@ -113,7 +111,6 @@ FractionScottK::FractionScottK(int n, int d) {
 }
 
 void FractionScottK::update(int n, int d) {
-    cout << "Fraction update(int int) called\n";
     int negitiveFlag = 0;
     // make sure wed dont give denom neg value or zero
     if (d == 0) {
@@ -144,22 +141,19 @@ void FractionScottK::update(int n, int d) {
     }
 }
 
-FractionScottK::FractionScottK(const FractionScottK& frOld) {
+FractionScottK::FractionScottK(const FractionScottK &frOld) {
     // copy constructor    
-    cout << "Fraction(const Fraction&) called\n";
     num = frOld.num;
     denom = frOld.denom;
 }
 
 FractionScottK::FractionScottK(int n) {
     // convert constructor
-    cout << "Fraction(int) called\n";
     num = n;
     denom = 1; 
 }
 
 FractionScottK::~FractionScottK() {
-    cout << "~Fraction() Destructor called\n";
     // destructor
 }
 
@@ -185,7 +179,7 @@ void FractionScottK::setDenom(int d) {
     }
 }
 
-FractionScottK FractionScottK::operator/(const FractionScottK& fr2) const {
+FractionScottK FractionScottK::operator/(const FractionScottK &fr2) const {
     int n;
     int d;
     int gcf;
@@ -201,7 +195,7 @@ FractionScottK FractionScottK::operator/(const FractionScottK& fr2) const {
     return FractionScottK(n, d);
 }
 
-FractionScottK FractionScottK::operator*(const FractionScottK& fr2) const {
+FractionScottK FractionScottK::operator*(const FractionScottK &fr2) const {
     int n;
     int d;
     int gcf;
@@ -218,17 +212,17 @@ FractionScottK FractionScottK::operator*(const FractionScottK& fr2) const {
     return FractionScottK(n, d);
 }
 
-FractionScottK FractionScottK::operator-(const FractionScottK& fr2) const {
+FractionScottK FractionScottK::operator-(const FractionScottK &fr2) const {
     return FractionScottK((num * fr2.denom) - (denom * fr2.num), 
    			  denom * fr2.denom);
 }
 
-FractionScottK FractionScottK::operator+(const FractionScottK& fr2) const {
+FractionScottK FractionScottK::operator+(const FractionScottK &fr2) const {
     return FractionScottK((num * fr2.denom) + (denom * fr2.num), 
 			  denom * fr2.denom);
 }
 
-FractionScottK& FractionScottK::operator=(const FractionScottK& fr2) {
+FractionScottK& FractionScottK::operator=(const FractionScottK &fr2) {
     if (this != &fr2) { // no self-assignment
 	num = fr2.num;
 	denom = fr2.denom;

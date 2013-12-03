@@ -15,7 +15,7 @@
 #include "ScottKinneyLab6Utility.h"
 using namespace std;
 
-FractionScottK compareArea(RectangleScottK& r1, RectangleScottK& r2){
+FractionScottK compareArea(RectangleScottK &r1, RectangleScottK &r2){
     return FractionScottK(r1.getArea() - r2.getArea());
 }
 
@@ -23,7 +23,7 @@ void rectangleInit(RectangleScottK *&rec1, RectangleScottK *&rec2) {
     PointScottK *ptLl;
     PointScottK *ptUr;
 
-    cout << "Rectangle One\n";
+    cout << "Rectangle one ";
     createTwoPoints(ptLl, ptUr);
 
     if (rec1)
@@ -34,7 +34,7 @@ void rectangleInit(RectangleScottK *&rec1, RectangleScottK *&rec2) {
     delete ptLl;
     delete ptUr;
     
-    cout << "Rectangle Two\n";
+    cout << "Rectangle two ";
     createTwoPoints(ptLl, ptUr);
 
     if (rec2)
@@ -51,12 +51,12 @@ void createTwoPoints(PointScottK *&ptLl, PointScottK *&ptUr) {
     string::size_type pos = 0;
 
     // lower left x coordinate
-    cout << "Lower left\n\tx: ";
+    cout << "\nLower left\nx: ";
     FractionScottK *frXll = NULL;
     createFraction(frXll);
 
     // lower left y coordinate
-    cout << "Lower left\n\ty: ";
+    cout << "y: ";
     FractionScottK *frYll = NULL;
     createFraction(frYll);
 
@@ -65,25 +65,25 @@ void createTwoPoints(PointScottK *&ptLl, PointScottK *&ptUr) {
 
     // upper right x coordinate
     // check that it's greater that lower left x
-    cout << "upper right\n\tx: ";
+    cout << "Upper right\nx: ";
     FractionScottK *frXur = NULL;
     createFraction(frXur);
 
     while (*frXur < *frXll) {
 	cout << "Cannot be less than lower left x coordinate.\n" 
-	     << "\tx: ";
+	     << "x: ";
 	createFraction(frXur);
     }
 
     // upper rigth y cooridnate
     // check that it's greater that lower left y
-    cout << "upper right\n\ty: ";
+    cout << "y: ";
     FractionScottK *frYur = NULL;
     createFraction(frYur);
     
     while (*frYur < *frYll) {
 	cout << "Cannot be less than lower left Y coordinate.\n" 
-	     << "\ty: ";
+	     << "y: ";
 	createFraction(frYur);
     }
 

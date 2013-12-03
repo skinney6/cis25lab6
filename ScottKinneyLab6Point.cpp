@@ -64,24 +64,20 @@ istream& operator>>(istream &is, PointScottK &point) {
 }
 
 PointScottK::PointScottK() {
-    cout << "Point() called\n";
     // default constructor
 }
 
 PointScottK::PointScottK(FractionScottK &x, FractionScottK &y) 
     : x(x), y(y) {
-    cout << "Point(Fraction&, Fraction&) : x(x), y(y); called\n";
 }
 
 PointScottK::PointScottK(const PointScottK &old) {
     //copy constructor
-    cout << "Point(const Point&) called\n";
     x = old.x;
     y = old.y;
 }
 
 PointScottK::~PointScottK() {
-    cout << "~Point() called\n";
 }                 
 
 PointScottK& PointScottK::operator=(const PointScottK &arg) {

@@ -8,10 +8,10 @@
 #ifndef SCOTTKINNEYLAB6CIRCLEUTILITY_H
 #define SCOTTKINNEYLAB6CIRCLEUTILITY_H
 
-void circleInit(CircleScottK*&, CircleScottK*&);
+void circleInit(CircleScottK *&, CircleScottK *&);
 
-void createCirclePoint(PointScottK*&);
+void createCirclePoint(PointScottK *&);
 
-FractionScottK compareCircleArea(CircleScottK&, CircleScottK&);
+FractionScottK compareCircleArea(CircleScottK &, CircleScottK &);
 
 #endif

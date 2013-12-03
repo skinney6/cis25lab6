@@ -14,15 +14,15 @@
 #include "ScottKinneyLab6Utility.h"
 using namespace std;
 
-FractionScottK compareCircleArea(CircleScottK& c1, CircleScottK& c2){
+FractionScottK compareCircleArea(CircleScottK &c1, CircleScottK &c2){
     return FractionScottK(c1.getR() - c2.getR());
 }
 
-void circleInit(CircleScottK*& c1, CircleScottK*& c2) {
+void circleInit(CircleScottK *&c1, CircleScottK *&c2) {
     PointScottK *center = NULL;
     FractionScottK *radius = NULL;
 
-    cout << "Circle one center point:\n";
+    cout << "Circle one\nCenter point\n";
     createCirclePoint(center);
     cout << "Radius: ";
     createFraction(radius);
@@ -40,7 +40,7 @@ void circleInit(CircleScottK*& c1, CircleScottK*& c2) {
     delete center;
     delete radius;
 
-    cout << "Circle two center point:\n";
+    cout << "Circle two\nCenter point\n";
     createCirclePoint(center);
     cout << "Radius: ";
     createFraction(radius);

@@ -10,31 +10,31 @@
 #include "ScottKinneyLab6Fraction.h"
 
 class PointScottK {
-    friend ostream& operator<<(ostream&, const PointScottK&);
-    friend istream& operator>>(istream&, PointScottK&);
+    friend ostream& operator<<(ostream &, const PointScottK &);
+    friend istream& operator>>(istream &, PointScottK &);
 private:
     FractionScottK x;
     FractionScottK y;
 public:
     PointScottK();
-    PointScottK(FractionScottK&, FractionScottK&);
-    PointScottK(const PointScottK&);
+    PointScottK(FractionScottK &, FractionScottK &);
+    PointScottK(const PointScottK &);
     ~PointScottK();
-    PointScottK& operator=(const PointScottK&);
+    PointScottK& operator=(const PointScottK &);
     FractionScottK getX();
     FractionScottK getY();
-    void moveBy(const FractionScottK&, const FractionScottK&);
+    void moveBy(const FractionScottK &, const FractionScottK &);
     void moveBy(int);
     void flipByX();
     void flipByY();
     void flipThroughOrigin();
-    void update(FractionScottK& argX, FractionScottK& argY);
-    bool operator==(const PointScottK&) const;
-    bool operator!=(const PointScottK&) const;
-    bool operator<=(const PointScottK&) const;
-    bool operator<(const PointScottK&) const;
-    bool operator>=(const PointScottK&) const;
-    bool operator>(const PointScottK&) const;
+    void update(FractionScottK &, FractionScottK &);
+    bool operator==(const PointScottK &) const;
+    bool operator!=(const PointScottK &) const;
+    bool operator<=(const PointScottK &) const;
+    bool operator<(const PointScottK &) const;
+    bool operator>=(const PointScottK &) const;
+    bool operator>(const PointScottK &) const;
 
 };
 

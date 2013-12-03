@@ -8,21 +8,21 @@
 #ifndef SCOTTKINNEYLAB6FRACTIONUTILITY_H
 #define SCOTTKINNEYLAB6FRACTIONUTILITY_H
 
-void init(FractionScottK*&, FractionScottK*&);
+void init(FractionScottK *&, FractionScottK *&);
 
-FractionScottK add(const FractionScottK&, const FractionScottK&);
+FractionScottK add(const FractionScottK &, const FractionScottK &);
 
-FractionScottK subtract(const FractionScottK&, const FractionScottK&);
+FractionScottK subtract(const FractionScottK &, const FractionScottK &);
 
-FractionScottK multiply(const FractionScottK&, const FractionScottK&);
+FractionScottK multiply(const FractionScottK &, const FractionScottK &);
 
-FractionScottK divide(const FractionScottK&, const FractionScottK&);
+FractionScottK divide(const FractionScottK &, const FractionScottK &);
 
-void printScottKinney(const FractionScottK&, 
-		      const FractionScottK&, const FractionScottK&);
+void printScottKinney(const FractionScottK &, 
+		      const FractionScottK &, const FractionScottK &);
 
-void mainMenuScottKinney(void);
-void headerScottKinney(void);
+//void mainMenuScottKinney(void);
+//void headerScottKinney(void);
 int gcd(int, int);
 
 #endif

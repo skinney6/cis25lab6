@@ -17,17 +17,17 @@ private:
     FractionScottK radius;  // no negative value allowed
 public:
     CircleScottK();
-    CircleScottK(PointScottK&, FractionScottK&);
-    CircleScottK(const CircleScottK&);       
+    CircleScottK(PointScottK &, FractionScottK &);
+    CircleScottK(const CircleScottK &);       
     ~CircleScottK();
 
-    CircleScottK& operator=(const CircleScottK&);
+    CircleScottK& operator=(const CircleScottK &);
 
     FractionScottK getR(void);
-    void update(PointScottK&, FractionScottK&);
+    void update(PointScottK &, FractionScottK &);
     
-    friend ostream& operator<<(ostream&, const CircleScottK&);
-    friend istream& operator>>(istream&, CircleScottK&);
+    friend ostream& operator<<(ostream &, const CircleScottK &);
+    friend istream& operator>>(istream &, CircleScottK &);
 
 };
 

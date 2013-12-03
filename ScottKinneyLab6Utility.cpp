@@ -17,15 +17,14 @@
 using namespace std;
 
 void mainMenuScottKinney(void) {
-int option;
+    int option;
 
     do {
 	cout << "************************"
 	     << "\n*     MAIN MENU        *"
 	     << "\n* 1. Rectangle Tasks   *"
 	     << "\n* 2. Circle Tasks      *"
-	     << "\n* 3.point test        *"
-	     << "\n* 4. Quit              *"
+	     << "\n* 3. Quit              *"
 	     << "\n************************" << endl;
 	cout << "Select an option (use iteger value only): ";
 	cin >> option;
@@ -38,16 +37,12 @@ int option;
 	    circleMenuScottKinney();
 	    break;
 	case 3:
-	    testPoint();
 	    break;
-	case 4:
-	    break;
-
 	default:
 	    cout << "\nWrong Option. Use 1, 2 or 3\n";
 	    cout << endl;
 	}
-    } while (option != 4);
+    } while (option != 3);
 }
 
 void rectangleMenuScottKinney(void) {
@@ -211,33 +206,10 @@ void headerScottKinney(void) {
     cout << "  Assignment Number: Lab 6\n";
     cout << "                     Exercise #1\n";
     cout << "  Written by:        Scott Kinney\n";
-    cout << "  Due Date:          \n" << endl;
+    cout << "  Due Date:          12/03/2013\n" << endl;
 }
 
 void errorInitScottKinney(void) {
     cout << "\nError: Fractions not initialized" << endl;
     cout << "  Run option 1.\n" << endl;
-}
-
-void testPoint(void) {
-    FractionScottK fr1(2, 3);
-    FractionScottK fr2(-4, 5);
-    FractionScottK fr3(1, 1);
-    FractionScottK fr4(2, 2);
-
-    PointScottK p1(fr1, fr2);
-    PointScottK p2(fr1, fr2);
-
-    cout << "p2 "<< p2 << "\n";
-
-    p2.flipByX();
-    cout << p2 << "\n";
-
-    p2.flipByY();
-    cout << p2 << "\n";
-
-
-    p2.flipThroughOrigin();
-    cout << p2 << "\n";
-
 }

@@ -15,28 +15,28 @@ private:
     PointScottK ur;
 public:
     RectangleScottK();                         /* default constr */
-    RectangleScottK(PointScottK&, PointScottK&); /* constructor*/
-    RectangleScottK(const RectangleScottK&);        /* copy constr    */
+    RectangleScottK(PointScottK &, PointScottK &); /* constructor*/
+    RectangleScottK(const RectangleScottK &);        /* copy constr    */
     ~RectangleScottK();                          /* destructor    */
 
-    RectangleScottK& operator=(const RectangleScottK&);
+    RectangleScottK& operator=(const RectangleScottK &);
     
-    void update(PointScottK&, PointScottK&);
+    void update(PointScottK &, PointScottK &);
 
     FractionScottK getArea(void);
 
     // insertion operator "cout"
-    friend ostream& operator<<(ostream&, const RectangleScottK&);
+    friend ostream& operator<<(ostream &, const RectangleScottK &);
 
     // extraction operator "cin"
-    friend istream& operator>>(istream&, RectangleScottK&);
+    friend istream& operator>>(istream &, RectangleScottK &);
 
-    bool operator==(const RectangleScottK&) const;
-    bool operator!=(const RectangleScottK&) const;
-    bool operator<=(const RectangleScottK&) const;
-    bool operator<(const RectangleScottK&) const;
-    bool operator>=(const RectangleScottK&) const;
-    bool operator>(const RectangleScottK&) const;
+    bool operator==(const RectangleScottK &) const;
+    bool operator!=(const RectangleScottK &) const;
+    bool operator<=(const RectangleScottK &) const;
+    bool operator<(const RectangleScottK &) const;
+    bool operator>=(const RectangleScottK &) const;
+    bool operator>(const RectangleScottK &) const;
 
 };
 

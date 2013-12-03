@@ -3,9 +3,10 @@
 # taken from wiki.osdev.org/Makefile
 # search gihub for "pdclib" for an example
 # c++ debug -D_GLIBCXX_DEBUG
+# compile shared library (.so) -shared -fPIC
 CC := g++
-CPARMS := -g -Wall -Wextra
-LDFLAGS := -g
+CPARMS := -Wall -Wextra
+LDFLAGS := 
 
 PROJDIRS := .
 SRCFILES := $(shell find $(PROJDIRS) -maxdepth 1 -type f -name "*.cpp")
@@ -25,18 +26,18 @@ all: lab6
 lab6: $(OBJFILES)
 	$(CC) $(LDFLAGS) $(OBJFILES) -o $@
 
+lib.lab6.so: $(OBJFILES)
+	$(CC) -shared -DLIB -o lib.lab6.so $?
+
 %.o: %.cpp makefile
 	$(CC) -c $(CFLAGS) $(CPARMS) -MMD -MP $< -o $@
-
-#$(OBJFILES): %.o: %.cpp
-#	$(CC) $(CFLAGS) $(CPARMS) -MMD -MP $< -o $@
 
 todolist:
 	-@for file in $(ALLFILES:makefile=); do grep -H -e TODO -e FIXME $$file; done; true
 
 dist:
-	@tar cf backup/lab6.`date +%m%d%y.%H%M`.tar $(ALLFILES) 
+	@tar cf /mnt/backup/cis25/lab6.`date +%m%d%y.%H%M`.tar $(ALLFILES) 
 
 clean:
-	-rm *.o *~
+	-rm *.o *.d *~
 
